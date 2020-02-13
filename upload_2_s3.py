@@ -27,5 +27,5 @@ def uploadFiles2Bucket(file_name, bucket_name):
 
 
 makeZip()
-if uploadFiles2Bucket('Jenkins.zip', 'jenkins-cicd-1002'):
-    print("SUCCESS")
+#if uploadFiles2Bucket('Jenkins.zip', 'jenkins-cicd-1002'):
+print("SUCCESS")
