@@ -1,11 +1,7 @@
 #!/usr/bin/groovy
 
 pipeline{
-    agent{
-        docker{
-            image 'python:alpine3.11'
-        }
-    }
+    agent { docker { image 'python:3.5.1' } }
     parameters {
         string(name: 'NAME', defaultValue: 'Auto', description: 'Who is running build') 
         string(name: 'EMAIL', defaultValue: 'kshitij5043@gmail.com', description: 'Whom to notify on build report')
