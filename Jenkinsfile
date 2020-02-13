@@ -11,7 +11,7 @@ pipeline{
             steps {
                 echo 'Building..'
                 echo "Build done by ${params.NAME}"
-                sh 'python3 -m py_compile src/add.py upload_2_s3.py lambda_function.py'
+                sh 'python3 -m py_compile src/add.py zip.py lambda_function.py'
        
                
                 
@@ -26,7 +26,7 @@ pipeline{
       stage('deploy') {
             steps {
                 echo 'Deploying..'
-                sh 'python3 upload_2_s3.py'
+                sh 'python3 zip.py'
             }
         }
     }
