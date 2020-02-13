@@ -1,6 +1,6 @@
-from boto3 import client
-from boto3 import resource
-from botocore.exceptions import ClientError
+#from boto3 import client
+#from boto3 import resource
+#from botocore.exceptions import ClientError
 import zipfile 
 import os
 
