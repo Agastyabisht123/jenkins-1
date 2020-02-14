@@ -37,6 +37,7 @@ pipeline{
            agent  { label 'master' }
            steps{
 	       echo 'Deploying'
+	       sh 'rm Jenkins.zip'
                sh 'zip -r  Jenkins.zip *'
                sh 'ls -all'
                sh 'aws lambda update-function-code --function-name python-cicd --zip-file fileb://Jenkins.zip'
