@@ -11,7 +11,7 @@ pipeline{
         stage('Setup'){
            agent  { label 'master' }
            steps{
-	           echo 'Setting Up...'
+	       echo 'Setting Up...'
                sh 'sudo apt-get install awscli'
                sh 'aws --version'
             }
