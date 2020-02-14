@@ -21,7 +21,7 @@ pipeline{
             steps {
                 echo 'Building...'
                 echo "Build done by ${params.NAME}"
-                sh 'python3 -m py_compile src/add.py zip.py lambda_function.py'
+                sh 'python3 -m py_compile src/add.py lambda_function.py'
             }
         }
         stage('test') {
@@ -36,7 +36,7 @@ pipeline{
         stage('Deploy'){
            agent  { label 'master' }
            steps{
-	           echo 'Deploying'
+	       echo 'Deploying'
                sh 'zip -r  Jenkins.zip *'
                sh 'ls -all'
                sh 'aws lambda update-function-code --function-name python-cicd --zip-file fileb://Jenkins.zip'
