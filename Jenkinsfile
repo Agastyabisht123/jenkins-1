@@ -47,15 +47,15 @@ pipeline{
 post {
     success {
             echo 'SUCCESS'
-            //mail to: "${params.EMAIL}",
-            //subject: "Build Success ${currentBuild.fullDisplayName}",
-            //body: " Build Success\n Build by: ${params.NAME}\n Build Name:  ${currentBuild.fullDisplayName} \n Build Url: ${env.BUILD_URL} "
+            mail to: "${params.EMAIL}",
+            subject: "Build Success ${currentBuild.fullDisplayName}",
+            body: " Build Success\n Build by: ${params.NAME}\n Build Name:  ${currentBuild.fullDisplayName} \n Build Url: ${env.BUILD_URL} "
         }
         failure {
             echo 'Failed.'
-            //mail to: "${params.EMAIL}",
-            //subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
-            //body: "Error !! \n Build by: ${params.NAME}\n Build Name:  ${currentBuild.fullDisplayName} \n Build Url: ${env.BUILD_URL} "
+            mail to: "${params.EMAIL}",
+            subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
+            body: "Error !! \n Build by: ${params.NAME}\n Build Name:  ${currentBuild.fullDisplayName} \n Build Url: ${env.BUILD_URL} "
         }
     }
 }
